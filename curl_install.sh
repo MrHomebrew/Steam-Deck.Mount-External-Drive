@@ -9,17 +9,17 @@
 #stop running script if anything returns an error (non-zero exit )
 set -e
 
-repo_url="https://raw.githubusercontent.com/scawp/Steam-Deck.Mount-External-Drive/Quick-Auto-Mount-Only"
+repo_url="https://raw.githubusercontent.com/MrHomebrew/Steam-Deck.Mount-External-Drive/Quick-Auto-Mount-Only"
 repo_lib_dir="$repo_url/lib"
 
 tmp_dir="/tmp/scawp"
 
 rules_install_dir="/etc/udev/rules.d"
 service_install_dir="/etc/systemd/system"
-script_install_dir="/home/deck/.local/share/scawp"
+script_install_dir="/home/mrhomebrew/.local/share/scawp"
 
 device_name="$(uname --nodename)"
-user="$(id -u deck)"
+user="$(id -u mrhomebrew)"
 
 if [ "$device_name" != "steamdeck" ] || [ "$user" != "1000" ]; then
   zenity --question --width=400 \
